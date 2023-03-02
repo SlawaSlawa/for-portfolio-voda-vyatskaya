@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Вода Вятская</title>
+        <link rel="stylesheet" href="libs/normalize.css" />
+        <link rel="stylesheet" href="css/index.min.css" />
+        <script src="js/index.min.js" defer></script>
+    </head>
+    <body>
+        <header class="header">
+            <div class="container">
+                <picture class="logo">
+                    <source
+                        srcset="./images/logo-min.png"
+                        media="(max-width: 768px)"
+                    />
+                    <img
+                        class="logo__img"
+                        src="./images/logo.png"
+                        alt="Логотип"
+                    />
+                </picture>
+                <nav class="nav">
+                    <a class="nav__link" href="#">производство</a>
+                    <a class="nav__link" href="#">вода</a>
+                    <a class="nav__link" href="#">напитки</a>
+                    <a class="nav__link" href="#">доставка</a>
+                    <a class="nav__link" href="#">контакты</a>
+                </nav>
+            </div>
+        </header>
+        <!-- /.header -->
+        <main class="main">
+            <section class="hero">
+                <div class="container">
+                    <ul class="contacts-list">
+                        <li class="contacts-list__item">
+                            <a
+                                href="tel:+7833438366"
+                                class="contacts-list__link"
+                            >
+                                +7 (8334) 3-83-66
+                            </a>
+                        </li>
+                        <li class="contacts-list__item">
+                            <a
+                                href="tel:+79536968366"
+                                class="contacts-list__link"
+                            >
+                                +7 (953) 696-83-66
+                            </a>
+                        </li>
+                        <li class="contacts-list__item">
+                            <a
+                                href="@vodaviatskaia.com"
+                                class="contacts-list__link"
+                                target="
+                        "
+                            >
+                                @vodaviatskaia
+                            </a>
+                        </li>
+                    </ul>
+
+                    <h1 class="title">
+                        артезианская вода с доставкой по казани
+                    </h1>
+
+                    <form class="hero__form">
+                        <input class="hero__input" type="tel" />
+                        <button class="btn-send">заказать</button>
+                    </form>
+                </div>
+                <!-- /.contacts -->
+            </section>
+            <!-- /.hero -->
+            <section class="reason">
+                <div class="container">
+                    <h2 class="section-title">
+                        <span class="section-title__selection">
+                            Три причины
+                        </span>
+                        заказать воду Вятскую
+                    </h2>
+
+                    <ol class="reason__list">
+                        <li class="reason__item">
+                            <picture class="reason__img">
+                                <source
+                                    srcset="./images/reason/reason-1-min.png"
+                                    media="(max-width: 768px)"
+                                />
+                                <img
+                                    src="./images/reason/reason-1.png"
+                                    alt="Витамины"
+                                />
+                            </picture>
+                            <p class="reason__description">
+                                Содержит все необходимые макро и микроэлементы —
+                                кальций, магний, натрий и йод.
+                            </p>
+                        </li>
+
+                        <li class="reason__item">
+                            <picture class="reason__img">
+                                <source
+                                    srcset="./images/reason/reason-2-min.png"
+                                    media="(max-width: 768px)"
+                                />
+                                <img
+                                    src="./images/reason/reason-2.png"
+                                    alt="Горы"
+                                />
+                            </picture>
+                            <p class="reason__description">
+                                Более 10 лет на рынке питьевой воды. 2000
+                                клиентов каждый день получают воду. 5000
+                                клиентов обслуживаются в месяц.
+                            </p>
+                        </li>
+
+                        <li class="reason__item">
+                            <picture class="reason__img">
+                                <source
+                                    srcset="./images/reason/reason-3-min.png"
+                                    media="(max-width: 768px)"
+                                />
+                                <img
+                                    src="./images/reason/reason-3.png"
+                                    alt="Скейтер"
+                                />
+                            </picture>
+                            <p class="reason__description">
+                                Доставка воды домой и в офис без задержек.
+                                Развозим воду по Казани. Возможны поставки в
+                                Иннополис, Зеленодольск
+                            </p>
+                        </li>
+                    </ol>
+                </div>
+            </section>
+            <!-- /.reason -->
+            <section class="calculate">
+                <div class="calculator">
+                    <h2 class="calculator__title">Калькулятор воды</h2>
+                    <div class="calculator__item">
+                        <h3 class="calculator__question">Мы заказываем воду</h3>
+                        <label for="office" class="calculator__question-label"
+                            >в офис</label
+                        >
+                        <input
+                            id="office"
+                            name="where"
+                            type="radio"
+                            value="office"
+                        />
+                        <label for="where" class="calculator__question-label"
+                            >домой</label
+                        >
+                        <input name="where" type="radio" value="home" checked />
+                    </div>
+                    <!-- /.calculator__item -->
+                    <div class="calculator__item">
+                        <h3 class="calculator__question">будут пить</h3>
+                        <button class="calculator__btn calculator__btn--minus">
+                            -
+                        </button>
+                        <span class="calculator__number">1</span>
+                        <button class="calculator__btn calculator__btn--plus">
+                            +
+                        </button>
+                        <span class="calculator__subscription">человек</span>
+                    </div>
+                    <!-- /.calculator__item -->
+                    <div class="calculator__item">
+                        <h3 class="calculator__question">НАМ НУЖЕН ЗАПАС НА</h3>
+                        <div class="counter-block">
+                            <button class="btn-counter btn-counter--minus">
+                                -
+                            </button>
+                            <span class="quantity">1</span>
+                            <button class="btn-counter btn-counter--plus">
+                                +
+                            </button>
+                        </div>
+
+                        <span class="calculator__subscription">дней</span>
+                    </div>
+                    <!-- /.calculator__item -->
+                    <div class="calculator__item">
+                        <h3 class="calculator__question">готовка</h3>
+                        <label
+                            for="withCooking"
+                            class="calculator__question-label"
+                            >с готовкой</label
+                        >
+                        <input
+                            id="withCooking"
+                            name="where"
+                            type="radio"
+                            value="with cooking"
+                        />
+                        <label
+                            for="notCooking"
+                            class="calculator__question-label"
+                            >без готовки</label
+                        >
+                        <input
+                            id="notCooking"
+                            name="where"
+                            type="radio"
+                            value="not cooking"
+                            checked
+                        />
+                    </div>
+                    <!-- /.calculator__item -->
+
+                    <div class="calculator__footer">
+                        <div class="calculator__info">
+                            <div class="calculator__info-item">
+                                <span class="calculator__info-description">
+                                    Ориентировочное количество воды
+                                </span>
+                                <div class="calculator__info-result">
+                                    <picture class="calculator__info-img">
+                                        <img
+                                            src="./images/buttle-icon.svg"
+                                            alt="Бутыль"
+                                        />
+                                    </picture>
+                                </div>
+                            </div>
+                            <div class="calculator__info-item">
+                                <span class="calculator__info-description">
+                                    Цена со скидкой 10% -от 20 бутылей
+                                </span>
+                                <div class="calculator__info-result">
+                                    <picture class="calculator__info-img">
+                                        <img
+                                            src="./images/card-icon.svg"
+                                            alt="Карточка"
+                                        />
+                                    </picture>
+                                    <div class="calculator__info-price">
+                                        100₽
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn-send">заказать</button>
+                    </div>
+                </div>
+                <!-- /.calculator -->
+            </section>
+            <!-- /.calculate -->
+            <section class="catalog">
+                <div class="container">
+                    <h2 class="section-title">Основной каталог</h2>
+                    <nav class="catalog__navigation">
+                        <button class="catalog__navigation-item">ВОДА</button>
+                        <button class="catalog__navigation-item">
+                            НАПИТКИ
+                        </button>
+                        <button class="catalog__navigation-item">ПОМПЫ</button>
+                        <button class="catalog__navigation-item">
+                            ДОПОЛНИТЕЛЬНО
+                        </button>
+                    </nav>
+
+                    <div class="catalog__wrapper">
+                        <div class="catalog__item">
+                            <picture class="catalog__item-img">
+                                <img
+                                    src="./images/catalog/catalog-1.png"
+                                    alt="Бутыль 19 литров"
+                                />
+                            </picture>
+                            <h3 class="catalog__item-title">19 литров</h3>
+                            <div class="catalog__price-block">
+                                <span class="catalog__item-price">100₽</span>
+                                <div class="counter-block">
+                                    <button
+                                        class="btn-counter btn-counter--minus"
+                                    >
+                                        -
+                                    </button>
+                                    <span class="quantity">1</span>
+                                    <button
+                                        class="btn-counter btn-counter--plus"
+                                    >
+                                        +
+                                    </button>
+                                </div>
+                            </div>
+                            <button class="btn-send">заказать</button>
+                        </div>
+                        <!-- /.catalog__item -->
+                        <div class="catalog__item">
+                            <picture class="catalog__item-img">
+                                <img
+                                    src="./images/catalog/catalog-2.png"
+                                    alt="Бутыль 6 литров"
+                                />
+                            </picture>
+                            <h3 class="catalog__item-title">6 литров</h3>
+                            <div class="catalog__price-block">
+                                <span class="catalog__item-price">50₽</span>
+                                <div class="counter-block">
+                                    <button
+                                        class="btn-counter btn-counter--minus"
+                                    >
+                                        -
+                                    </button>
+                                    <span class="quantity">1</span>
+                                    <button
+                                        class="btn-counter btn-counter--plus"
+                                    >
+                                        +
+                                    </button>
+                                </div>
+                            </div>
+                            <button class="btn-send">заказать</button>
+                        </div>
+                        <!-- /.catalog__item -->
+
+                        <div class="catalog__item">
+                            <picture class="catalog__item-img">
+                                <img
+                                    src="./images/catalog/catalog-3.png"
+                                    alt="Бутыль 1,5 литра"
+                                />
+                            </picture>
+                            <h3 class="catalog__item-title">1,5 литров</h3>
+                            <div class="catalog__price-block">
+                                <span class="catalog__item-price">35₽</span>
+                                <div class="counter-block">
+                                    <button
+                                        class="btn-counter btn-counter--minus"
+                                    >
+                                        -
+                                    </button>
+                                    <span class="quantity">1</span>
+                                    <button
+                                        class="btn-counter btn-counter--plus"
+                                    >
+                                        +
+                                    </button>
+                                </div>
+                            </div>
+                            <button class="btn-send">заказать</button>
+                        </div>
+                        <!-- /.catalog__item -->
+
+                        <div class="catalog__item">
+                            <picture class="catalog__item-img">
+                                <img
+                                    src="./images/catalog/catalog-4.png"
+                                    alt="Бутыль 19 литров"
+                                />
+                            </picture>
+                            <h3 class="catalog__item-title">0,5 литра</h3>
+                            <div class="catalog__price-block">
+                                <span class="catalog__item-price">20₽</span>
+                                <div class="counter-block">
+                                    <button
+                                        class="btn-counter btn-counter--minus"
+                                    >
+                                        -
+                                    </button>
+                                    <span class="quantity">1</span>
+                                    <button
+                                        class="btn-counter btn-counter--plus"
+                                    >
+                                        +
+                                    </button>
+                                </div>
+                            </div>
+                            <button class="btn-send">заказать</button>
+                        </div>
+                        <!-- /.catalog__item -->
+                    </div>
+                </div>
+            </section>
+            <!-- /.catalog -->
+            <section class="description">
+                <div class="container">
+                    <h2 class="section-title">
+                        Вода вятская —
+                        <span class="section-title section-title--uppercase"
+                            >ПИТЬЕВАЯ ВОДА ДЛЯ ДОМА И ОФИСА</span
+                        >
+                    </h2>
+                    <p class="description">
+                        Выбрать компанию, предлагающую действительно хороший
+                        товар, не так-то просто. Высокая цена далеко не всегда
+                        означает отменное качество, порой предлагается простая
+                        вода из-под крана, о чём можно узнать из этикетки.
+                    </p>
+                    <p class="description">
+                        Наша компания предлагает действительно качественный
+                        товар и гарантирует своевременную доставку питьевой воды
+                        до дома или офиса. У нас вы можете также купить кулер
+                        для воды, что позволит легко запасаться нужным
+                        количеством и получать легко и быстро, а также иметь
+                        возможность в любой момент налить себе ароматного чаю.
+                        Такие приспособления незаменимы в офисе, а теперь
+                        используются и в квартирах.
+                    </p>
+                </div>
+            </section>
+            <!-- /.description -->
+            <section class="production">
+                <div class="container">
+                    <div class="production__video"></div>
+                </div>
+            </section>
+            <!-- /.production -->
+        </main>
+        <!-- .main -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__wrapper">
+                    <div class="footer__contacts">
+                        <picture class="logo">
+                            <source
+                                srcset="./images/logo-min.png"
+                                media="(max-width: 768px)"
+                            />
+                            <img
+                                class="logo__img"
+                                src="./images/logo.png"
+                                alt="Логотип"
+                            />
+                        </picture>
+                        <ul class="footer__contacts-list">
+                            <li class="footer__contacts-item">
+                                <a
+                                    href="tel:+7833438366"
+                                    class="footer__contacts-link"
+                                >
+                                    <picture class="footer__contacts-img">
+                                        <img
+                                            src="./images/phone-icon.svg"
+                                            alt="Телефон"
+                                        />
+                                    </picture>
+                                    +7 (8334) 3-83-66
+                                </a>
+                            </li>
+                            <li class="footer__contacts-item">
+                                <a
+                                    href="tel:+79536968366"
+                                    class="footer__contacts-link"
+                                >
+                                    <picture class="footer__contacts-img">
+                                        <img
+                                            src="./images/whatsup-icon.svg"
+                                            alt="Телефон"
+                                        />
+                                    </picture>
+                                    +7 (953) 696-83-66
+                                </a>
+                            </li>
+                            <li class="footer__contacts-item"></li>
+                        </ul>
+                        <div class="footer__copy">Вода Вятская (с) 2022</div>
+                    </div>
+                    <nav class="nav">
+                        <a class="nav__link" href="#">производство</a>
+                        <a class="nav__link" href="#">вода</a>
+                        <a class="nav__link" href="#">напитки</a>
+                        <a class="nav__link" href="#">доставка</a>
+                        <a class="nav__link" href="#">контакты</a>
+                        <a href="#" class="nav__link navlink--footer"
+                            >Политика конфеденциальности</a
+                        >
+                    </nav>
+                    <div class="footer__socials">
+                        <ul class="footer__socials-list">
+                            <li class="footer__socials-item">
+                                <a
+                                    href="https://www.youtube.com/"
+                                    class="footer__socials-link"
+                                    target="_blank"
+                                >
+                                    youtube.com
+                                    <picture class="footer__socials-img">
+                                        <img
+                                            src="./images/youtube-icon.svg"
+                                            alt="Youtube"
+                                        />
+                                    </picture>
+                                </a>
+                            </li>
+                            <li class="footer__socials-item">
+                                <a
+                                    href="vk.com/vodakzn"
+                                    class="footer__socials-link"
+                                    target="_blank"
+                                >
+                                    vk.com/vodakzn
+                                    <picture class="footer__socials-img">
+                                        <img
+                                            src="./images/vk-icon.svg"
+                                            alt="VK"
+                                        />
+                                    </picture>
+                                </a>
+                            </li>
+                            <li class="footer__socials-item">
+                                <a
+                                    href="@vodakzn"
+                                    class="footer__socials-link"
+                                    target="_blank"
+                                >
+                                    @vodakzn
+                                    <picture class="footer__socials-img">
+                                        <img
+                                            src="./images/instagram-icon.svg"
+                                            alt="Instagram"
+                                        />
+                                    </picture>
+                                </a>
+                            </li>
+                            <li class="footer__socials-item">
+                                <a
+                                    href="mailto:voda@gmail.com"
+                                    class="footer__socials-link"
+                                    target="_blank"
+                                >
+                                    voda@gmail.com
+                                    <picture class="footer__socials-img">
+                                        <img
+                                            src="./images/mail-icon.svg"
+                                            alt="Mail"
+                                        />
+                                    </picture>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
