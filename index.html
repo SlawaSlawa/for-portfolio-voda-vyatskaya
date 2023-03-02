@@ -10,29 +10,36 @@
     </head>
     <body>
         <header class="header">
+            <btn class="burger-btn">
+                <div class="burger-line"></div>
+                <div class="burger-line"></div>
+                <div class="burger-line burger-line--min"></div>
+            </btn>
             <div class="container">
-                <picture class="logo">
-                    <source
-                        srcset="./images/logo-min.png"
-                        media="(max-width: 768px)"
-                    />
-                    <img
-                        class="logo__img"
-                        src="./images/logo.png"
-                        alt="Логотип"
-                    />
-                </picture>
-                <nav class="nav">
-                    <a class="nav__link" href="#">производство</a>
-                    <a class="nav__link" href="#">вода</a>
-                    <a class="nav__link" href="#">напитки</a>
-                    <a class="nav__link" href="#">доставка</a>
-                    <a class="nav__link" href="#">контакты</a>
-                </nav>
+                <div class="header__wrapper">
+                    <picture class="logo">
+                        <source
+                            srcset="./images/logo-min.png"
+                            media="(max-width: 768px)"
+                        />
+                        <img
+                            class="logo__img"
+                            src="./images/logo.png"
+                            alt="Логотип"
+                        />
+                    </picture>
+                    <nav class="nav">
+                        <a class="nav__link" href="#">производство</a>
+                        <a class="nav__link" href="#">вода</a>
+                        <a class="nav__link" href="#">напитки</a>
+                        <a class="nav__link" href="#">доставка</a>
+                        <a class="nav__link" href="#">контакты</a>
+                    </nav>
+                </div>
             </div>
         </header>
         <!-- /.header -->
-        <main class="main">
+        <main class="main dn">
             <section class="hero">
                 <div class="container">
                     <ul class="contacts-list">
@@ -419,7 +426,7 @@
             <!-- /.production -->
         </main>
         <!-- .main -->
-        <footer class="footer">
+        <footer class="footer dn">
             <div class="container">
                 <div class="footer__wrapper">
                     <div class="footer__contacts">
