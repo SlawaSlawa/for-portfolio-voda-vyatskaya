@@ -30,7 +30,9 @@
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
         <link rel="stylesheet" href="libs/normalize.css" />
+        <link rel="stylesheet" href="libs/swiper/swiper-bundle.min.css" />
         <link rel="stylesheet" href="css/index.min.css" />
+        <script src="libs/swiper/swiper-bundle.min.js"></script>
         <script src="js/index.min.js" defer></script>
     </head>
     <body>
@@ -139,7 +141,7 @@
                 <!-- /.contacts -->
             </section>
             <!-- /.hero -->
-            <section class="reason dn">
+            <section class="reason">
                 <div class="container">
                     <h2 class="section-title">
                         <span class="section-title__selection">
@@ -147,61 +149,70 @@
                         </span>
                         заказать воду Вятскую
                     </h2>
+                    <div class="reason__slider">
+                        <ol class="reason__list swiper-wrapper">
+                            <li class="reason__item swiper-slide">
+                                <picture class="reason__img">
+                                    <source
+                                        srcset="
+                                            ./images/reason/reason-1-min.png
+                                        "
+                                        media="(max-width: 768px)"
+                                    />
+                                    <img
+                                        src="./images/reason/reason-1.png"
+                                        alt="Витамины"
+                                    />
+                                </picture>
+                                <p class="reason__description">
+                                    Содержит все необходимые макро и
+                                    микроэлементы — кальций, магний, натрий и
+                                    йод.
+                                </p>
+                            </li>
 
-                    <ol class="reason__list">
-                        <li class="reason__item">
-                            <picture class="reason__img">
-                                <source
-                                    srcset="./images/reason/reason-1-min.png"
-                                    media="(max-width: 768px)"
-                                />
-                                <img
-                                    src="./images/reason/reason-1.png"
-                                    alt="Витамины"
-                                />
-                            </picture>
-                            <p class="reason__description">
-                                Содержит все необходимые макро и микроэлементы —
-                                кальций, магний, натрий и йод.
-                            </p>
-                        </li>
+                            <li class="reason__item swiper-slide">
+                                <picture class="reason__img">
+                                    <source
+                                        srcset="
+                                            ./images/reason/reason-2-min.png
+                                        "
+                                        media="(max-width: 768px)"
+                                    />
+                                    <img
+                                        src="./images/reason/reason-2.png"
+                                        alt="Горы"
+                                    />
+                                </picture>
+                                <p class="reason__description">
+                                    Более 10 лет на рынке питьевой воды. 2000
+                                    клиентов каждый день получают воду. 5000
+                                    клиентов обслуживаются в месяц.
+                                </p>
+                            </li>
 
-                        <li class="reason__item">
-                            <picture class="reason__img">
-                                <source
-                                    srcset="./images/reason/reason-2-min.png"
-                                    media="(max-width: 768px)"
-                                />
-                                <img
-                                    src="./images/reason/reason-2.png"
-                                    alt="Горы"
-                                />
-                            </picture>
-                            <p class="reason__description">
-                                Более 10 лет на рынке питьевой воды. 2000
-                                клиентов каждый день получают воду. 5000
-                                клиентов обслуживаются в месяц.
-                            </p>
-                        </li>
-
-                        <li class="reason__item">
-                            <picture class="reason__img">
-                                <source
-                                    srcset="./images/reason/reason-3-min.png"
-                                    media="(max-width: 768px)"
-                                />
-                                <img
-                                    src="./images/reason/reason-3.png"
-                                    alt="Скейтер"
-                                />
-                            </picture>
-                            <p class="reason__description">
-                                Доставка воды домой и в офис без задержек.
-                                Развозим воду по Казани. Возможны поставки в
-                                Иннополис, Зеленодольск
-                            </p>
-                        </li>
-                    </ol>
+                            <li class="reason__item swiper-slide">
+                                <picture class="reason__img">
+                                    <source
+                                        srcset="
+                                            ./images/reason/reason-3-min.png
+                                        "
+                                        media="(max-width: 768px)"
+                                    />
+                                    <img
+                                        src="./images/reason/reason-3.png"
+                                        alt="Скейтер"
+                                    />
+                                </picture>
+                                <p class="reason__description">
+                                    Доставка воды домой и в офис без задержек.
+                                    Развозим воду по Казани. Возможны поставки в
+                                    Иннополис, Зеленодольск
+                                </p>
+                            </li>
+                        </ol>
+                        <div class="swiper-pagination"></div>
+                    </div>
                 </div>
             </section>
             <!-- /.reason -->
