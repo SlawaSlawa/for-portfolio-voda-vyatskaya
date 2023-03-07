@@ -32,7 +32,14 @@
         <link rel="stylesheet" href="libs/normalize.css" />
         <link rel="stylesheet" href="libs/swiper/swiper-bundle.min.css" />
         <link rel="stylesheet" href="css/index.min.css" />
-        <script src="libs/swiper/swiper-bundle.min.js"></script>
+        <script src="libs/swiper/swiper-bundle.min.js" defer></script>
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.0/js/swiper.js"></script>
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+        /> -->
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script> -->
         <script src="js/index.min.js" defer></script>
     </head>
     <body>
@@ -149,8 +156,10 @@
                         </span>
                         заказать воду Вятскую
                     </h2>
-                    <div class="reason__slider">
-                        <ol class="reason__list swiper-wrapper">
+                </div>
+                <div class="container container--reason">
+                    <div class="swiper reason__slider">
+                        <ol class="swiper-wrapper reason__list">
                             <li class="reason__item swiper-slide">
                                 <picture class="reason__img">
                                     <source
@@ -170,7 +179,6 @@
                                     йод.
                                 </p>
                             </li>
-
                             <li class="reason__item swiper-slide">
                                 <picture class="reason__img">
                                     <source
@@ -190,7 +198,6 @@
                                     клиентов обслуживаются в месяц.
                                 </p>
                             </li>
-
                             <li class="reason__item swiper-slide">
                                 <picture class="reason__img">
                                     <source
