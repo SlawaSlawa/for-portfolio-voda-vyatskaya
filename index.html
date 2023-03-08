@@ -223,81 +223,108 @@
                 </div>
             </section>
             <!-- /.reason -->
-            <section class="calculate dn">
+            <section class="calculate">
                 <div class="calculator">
                     <h2 class="calculator__title">Калькулятор воды</h2>
-                    <div class="calculator__item">
-                        <h3 class="calculator__question">Мы заказываем воду</h3>
-                        <label for="office" class="calculator__question-label"
-                            >в офис</label
-                        >
-                        <input
-                            id="office"
-                            name="where"
-                            type="radio"
-                            value="office"
-                        />
-                        <label for="where" class="calculator__question-label"
-                            >домой</label
-                        >
-                        <input name="where" type="radio" value="home" checked />
-                    </div>
-                    <!-- /.calculator__item -->
-                    <div class="calculator__item">
-                        <h3 class="calculator__question">будут пить</h3>
-                        <button class="calculator__btn calculator__btn--minus">
-                            -
-                        </button>
-                        <span class="calculator__number">1</span>
-                        <button class="calculator__btn calculator__btn--plus">
-                            +
-                        </button>
-                        <span class="calculator__subscription">человек</span>
-                    </div>
-                    <!-- /.calculator__item -->
-                    <div class="calculator__item">
-                        <h3 class="calculator__question">НАМ НУЖЕН ЗАПАС НА</h3>
-                        <div class="counter-block">
-                            <button class="btn-counter btn-counter--minus">
-                                -
-                            </button>
-                            <span class="quantity">1</span>
-                            <button class="btn-counter btn-counter--plus">
-                                +
-                            </button>
+                    <div class="calculator__item-wrapper">
+                        <div class="calculator__item">
+                            <h3 class="calculator__question">
+                                Мы заказываем воду
+                            </h3>
+                            <div class="calculator__question-wrapper">
+                                <label
+                                    for="office"
+                                    class="calculator__question-label"
+                                    >в офис
+                                    <input
+                                        class="calculator__item-radio"
+                                        id="office"
+                                        name="where"
+                                        type="radio"
+                                        value="office"
+                                    />
+                                </label>
+                                <label
+                                    for="home"
+                                    class="calculator__question-label calculator__question-label--active"
+                                    >домой
+                                    <input
+                                        class="calculator__item-radio"
+                                        id="home"
+                                        name="where"
+                                        type="radio"
+                                        value="home"
+                                        checked
+                                    />
+                                </label>
+                            </div>
                         </div>
+                        <!-- /.calculator__item -->
+                        <div class="calculator__item">
+                            <h3 class="calculator__question">будут пить</h3>
+                            <div class="counter-block">
+                                <button class="btn-counter btn-counter--minus">
+                                    -
+                                </button>
+                                <span class="counter__number">1</span>
+                                <button class="btn-counter btn-counter--plus">
+                                    +
+                                </button>
+                            </div>
+                            <span class="calculator__subscription"
+                                >человек</span
+                            >
+                        </div>
+                        <!-- /.calculator__item -->
+                        <div class="calculator__item">
+                            <h3 class="calculator__question">
+                                НАМ НУЖЕН ЗАПАС НА
+                            </h3>
+                            <div class="counter-block">
+                                <button class="btn-counter btn-counter--minus">
+                                    -
+                                </button>
+                                <span class="counter__number">1</span>
+                                <button class="btn-counter btn-counter--plus">
+                                    +
+                                </button>
+                            </div>
 
-                        <span class="calculator__subscription">дней</span>
+                            <span class="calculator__subscription">дней</span>
+                        </div>
+                        <!-- /.calculator__item -->
+                        <div class="calculator__item">
+                            <h3 class="calculator__question">готовка</h3>
+                            <div class="calculator__question-wrapper">
+                                <label
+                                    for="withCooking"
+                                    class="calculator__question-label"
+                                    >с готовкой
+                                    <input
+                                        class="calculator__item-radio"
+                                        id="withCooking"
+                                        name="cooking"
+                                        type="radio"
+                                        value="with cooking"
+                                    />
+                                </label>
+                                <label
+                                    for="notCooking"
+                                    class="calculator__question-label calculator__question-label--active"
+                                    >без готовки
+                                    <input
+                                        class="calculator__item-radio"
+                                        id="notCooking"
+                                        name="cooking"
+                                        type="radio"
+                                        value="not cooking"
+                                        checked
+                                    />
+                                </label>
+                            </div>
+                        </div>
+                        <!-- /.calculator__item -->
                     </div>
-                    <!-- /.calculator__item -->
-                    <div class="calculator__item">
-                        <h3 class="calculator__question">готовка</h3>
-                        <label
-                            for="withCooking"
-                            class="calculator__question-label"
-                            >с готовкой</label
-                        >
-                        <input
-                            id="withCooking"
-                            name="where"
-                            type="radio"
-                            value="with cooking"
-                        />
-                        <label
-                            for="notCooking"
-                            class="calculator__question-label"
-                            >без готовки</label
-                        >
-                        <input
-                            id="notCooking"
-                            name="where"
-                            type="radio"
-                            value="not cooking"
-                            checked
-                        />
-                    </div>
-                    <!-- /.calculator__item -->
-
                     <div class="calculator__footer">
                         <div class="calculator__info">
                             <div class="calculator__info-item">
@@ -311,6 +338,7 @@
                                             alt="Бутыль"
                                         />
                                     </picture>
+                                    <div class="calculator__info-count">1</div>
                                 </div>
                             </div>
                             <div class="calculator__info-item">
@@ -318,7 +346,9 @@
                                     Цена со скидкой 10% -от 20 бутылей
                                 </span>
                                 <div class="calculator__info-result">
-                                    <picture class="calculator__info-img">
+                                    <picture
+                                        class="calculator__info-img calculator__info-img--min"
+                                    >
                                         <img
                                             src="./images/card-icon.svg"
                                             alt="Карточка"
@@ -330,7 +360,9 @@
                                 </div>
                             </div>
                         </div>
-                        <button class="btn-send">заказать</button>
+                        <button class="btn-send btn-send--calculate">
+                            заказать
+                        </button>
                     </div>
                 </div>
                 <!-- /.calculator -->
