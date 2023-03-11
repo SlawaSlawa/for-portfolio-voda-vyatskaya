@@ -668,6 +668,166 @@
    max-width: 168px;
 }
 
+.catalog {
+   position: relative;
+   z-index: 10;
+}
+
+.catalog__bg {
+   position: absolute;
+   z-index: -1;
+   top: 38%;
+   left: 0;
+
+   display: block;
+
+   width: 100%;
+   height: 100%;
+
+   background-image: url("../images/catalog-bg.svg");
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: cover;
+}
+
+.catalog__navigation-slider {
+   max-width: 722px;
+   margin-bottom: 69px;
+   margin-left: 0;
+   padding-bottom: 48px;
+}
+
+.catalog__navigation-item {
+   font-family: "Rubik", sans-serif;
+   font-size: 18px;
+   font-weight: 500;
+   font-style: normal;
+   line-height: 180%;
+
+   width: auto !important;
+   min-width: 108px;
+   padding: 14px 30px;
+
+   cursor: pointer;
+   -webkit-transition: .3s background-color ease, .3s color ease;
+        -o-transition: .3s background-color ease, .3s color ease;
+           transition: .3s background-color ease, .3s color ease;
+   text-align: center;
+
+   color: #000;
+   border: 1px solid #000;
+   border-radius: 10px;
+   background: -o-linear-gradient(356.42deg, rgba(255, 255, 255, 0) -.02%, rgba(255, 255, 255, .4) 99.98%), #f2f2f2;
+   background:    linear-gradient(93.58deg, rgba(255, 255, 255, 0) -.02%, rgba(255, 255, 255, .4) 99.98%), #f2f2f2;
+   -webkit-box-shadow: 6px 10px 25px rgba(0, 0, 0, .1);
+           box-shadow: 6px 10px 25px rgba(0, 0, 0, .1);
+}
+
+.catalog__navigation-item:hover {
+   color: #fff;
+   background-color: #50beff;
+}
+
+.catalog__navigation-item--active {
+   color: #fff;
+   background-color: #50beff;
+}
+
+.catalog__item {
+   padding: 12px;
+
+   border: 1px solid #000;
+   border-radius: 10px;
+   background-color: #fff;
+}
+
+.catalog__info {
+   display: -webkit-box;
+   display: -ms-flexbox;
+   display: flex;
+
+   -webkit-box-align: center;
+   -ms-flex-align: center;
+   align-items: center;
+}
+
+.catalog__item-img {
+   display: block;
+
+   width: 188px;
+   height: 228px;
+   margin: 0 auto 17px auto;
+}
+
+.catalog__item-title {
+   font-size: 32.531px;
+   font-weight: 700;
+   line-height: 46px;
+
+   margin-top: 0;
+   margin-bottom: 8px;
+
+   color: #262626;
+}
+
+.catalog__price-block {
+   display: -webkit-box;
+   display: -ms-flexbox;
+   display: flex;
+
+   margin-bottom: 22px;
+
+   -webkit-box-align: center;
+   -ms-flex-align: center;
+   align-items: center;
+   gap: 30px;
+}
+
+.catalog__item-price {
+   font-size: 35.4039px;
+   font-weight: 300;
+   font-style: normal;
+   line-height: 51px;
+
+   color: #000;
+}
+
+.counter-block--catalog {
+   display: -webkit-box;
+   display: -ms-flexbox;
+   display: flex;
+
+   margin-bottom: 0;
+
+   -webkit-box-align: center;
+   -ms-flex-align: center;
+   align-items: center;
+}
+
+.btn-counter--catalog {
+   color: #000;
+}
+
+.quantity--catalog {
+   display: -webkit-box;
+   display: -ms-flexbox;
+   display: flex;
+
+   width: 44px;
+   height: 44px;
+
+   color: #000;
+   border: 1px solid #000;
+   border-radius: 8.76355px;
+
+   -webkit-box-pack: center;
+   -ms-flex-pack: center;
+   justify-content: center;
+   -webkit-box-align: center;
+   -ms-flex-align: center;
+   align-items: center;
+}
+
 .dn {
    display: none !important;
 }
@@ -760,6 +920,11 @@ ul {
    padding: 12px 58px;
 
    text-align: center;
+}
+
+.btn-send--catalog {
+   width: 100%;
+   margin-left: 0;
 }
 
 .section-title {
@@ -939,6 +1104,35 @@ ul {
    .contacts-list__img {
       width: 40px;
       height: 40px;
+   }
+}
+
+@media (max-width: 976px) {
+   .catalog__navigation {
+      gap: 10px;
+   }
+
+   .catalog__navigation-item {
+      font-size: 16px;
+   }
+
+   .catalog__item-title {
+      font-size: 26px;
+   }
+
+   .catalog__item-price {
+      font-size: 32px;
+   }
+
+   .catalog__item-img {
+      width: 146px;
+      height: 147px;
+      margin-bottom: 18px;
+   }
+
+   .container--catalog {
+      padding-right: 0;
+      padding-left: 0;
    }
 }
 
@@ -1392,11 +1586,14 @@ ul {
       font-size: 14.3135px;
       line-height: 17px;
 
+      padding: 10px 14px;
+   }
+
+   .btn-send--hero {
       position: absolute;
       right: 0;
 
       width: 48%;
-      padding: 10px 14px;
    }
 
    .btn-send--calculate {

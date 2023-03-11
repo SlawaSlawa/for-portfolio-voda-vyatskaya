@@ -135,7 +135,9 @@
                                 type="tel"
                                 placeholder="ваш телефон"
                             />
-                            <button class="btn-send">заказать</button>
+                            <button class="btn-send btn-send--hero">
+                                заказать
+                            </button>
                         </form>
                         <picture class="hero__buttles">
                             <img
@@ -383,132 +385,165 @@
                 <!-- /.calculator -->
             </section>
             <!-- /.calculate -->
-            <section class="catalog dn">
-                <div class="container">
-                    <h2 class="section-title">Основной каталог</h2>
-                    <nav class="catalog__navigation">
-                        <button class="catalog__navigation-item">ВОДА</button>
-                        <button class="catalog__navigation-item">
-                            НАПИТКИ
-                        </button>
-                        <button class="catalog__navigation-item">ПОМПЫ</button>
-                        <button class="catalog__navigation-item">
-                            ДОПОЛНИТЕЛЬНО
-                        </button>
-                    </nav>
-
-                    <div class="catalog__wrapper">
-                        <div class="catalog__item">
-                            <picture class="catalog__item-img">
-                                <img
-                                    src="./images/catalog/catalog-1.png"
-                                    alt="Бутыль 19 литров"
-                                />
-                            </picture>
-                            <h3 class="catalog__item-title">19 литров</h3>
-                            <div class="catalog__price-block">
-                                <span class="catalog__item-price">100₽</span>
-                                <div class="counter-block">
-                                    <button
-                                        class="btn-counter btn-counter--minus"
-                                    >
-                                        -
-                                    </button>
-                                    <span class="quantity">1</span>
-                                    <button
-                                        class="btn-counter btn-counter--plus"
-                                    >
-                                        +
-                                    </button>
-                                </div>
-                            </div>
-                            <button class="btn-send">заказать</button>
-                        </div>
-                        <!-- /.catalog__item -->
-                        <div class="catalog__item">
-                            <picture class="catalog__item-img">
-                                <img
-                                    src="./images/catalog/catalog-2.png"
-                                    alt="Бутыль 6 литров"
-                                />
-                            </picture>
-                            <h3 class="catalog__item-title">6 литров</h3>
-                            <div class="catalog__price-block">
-                                <span class="catalog__item-price">50₽</span>
-                                <div class="counter-block">
-                                    <button
-                                        class="btn-counter btn-counter--minus"
-                                    >
-                                        -
-                                    </button>
-                                    <span class="quantity">1</span>
-                                    <button
-                                        class="btn-counter btn-counter--plus"
-                                    >
-                                        +
-                                    </button>
-                                </div>
-                            </div>
-                            <button class="btn-send">заказать</button>
-                        </div>
-                        <!-- /.catalog__item -->
-
-                        <div class="catalog__item">
-                            <picture class="catalog__item-img">
-                                <img
-                                    src="./images/catalog/catalog-3.png"
-                                    alt="Бутыль 1,5 литра"
-                                />
-                            </picture>
-                            <h3 class="catalog__item-title">1,5 литров</h3>
-                            <div class="catalog__price-block">
-                                <span class="catalog__item-price">35₽</span>
-                                <div class="counter-block">
-                                    <button
-                                        class="btn-counter btn-counter--minus"
-                                    >
-                                        -
-                                    </button>
-                                    <span class="quantity">1</span>
-                                    <button
-                                        class="btn-counter btn-counter--plus"
-                                    >
-                                        +
-                                    </button>
-                                </div>
-                            </div>
-                            <button class="btn-send">заказать</button>
-                        </div>
-                        <!-- /.catalog__item -->
-
-                        <div class="catalog__item">
-                            <picture class="catalog__item-img">
-                                <img
-                                    src="./images/catalog/catalog-4.png"
-                                    alt="Бутыль 19 литров"
-                                />
-                            </picture>
-                            <h3 class="catalog__item-title">0,5 литра</h3>
-                            <div class="catalog__price-block">
-                                <span class="catalog__item-price">20₽</span>
-                                <div class="counter-block">
-                                    <button
-                                        class="btn-counter btn-counter--minus"
-                                    >
-                                        -
-                                    </button>
-                                    <span class="quantity">1</span>
-                                    <button
-                                        class="btn-counter btn-counter--plus"
-                                    >
-                                        +
-                                    </button>
-                                </div>
-                            </div>
-                            <button class="btn-send">заказать</button>
-                        </div>
-                        <!-- /.catalog__item -->
+            <section class="catalog">
+                <div class="catalog__bg"></div>
+                    <div class="container">
+                        <h2 class="section-title">Основной каталог</h2>
                     </div>
+                    <div class="container container--catalog">
+                    <div class="swiper catalog__navigation-slider">
+                        <nav class="swiper-wrapper catalog__navigation">
+                            <button
+                                class="swiper-slide catalog__navigation-item"
+                            >
+                                ВОДА
+                            </button>
+                            <button
+                                class="swiper-slide catalog__navigation-item catalog__navigation-item--active"
+                            >
+                                НАПИТКИ
+                            </button>
+                            <button
+                                class="swiper-slide catalog__navigation-item"
+                            >
+                                ПОМПЫ
+                            </button>
+                            <button
+                                class="swiper-slide catalog__navigation-item"
+                            >
+                                ДОПОЛНИТЕЛЬНО
+                            </button>
+                        </nav>
+                    </div>
+                    <div class="swiper catalog-slider">
+                        <div class="swiper-wrapper catalog__wrapper">
+                            <div class="catalog__item swiper-slide">
+                                <picture class="catalog__item-img">
+                                    <img
+                                        src="./images/catalog/catalog-1.png"
+                                        alt="Бутыль 19 литров"
+                                    />
+                                </picture>
+                                <h3 class="catalog__item-title">19 литров</h3>
+                                <div class="catalog__price-block">
+                                    <span class="catalog__item-price"
+                                        >100₽</span
+                                    >
+                                    <div
+                                        class="counter-block counter-block--catalog"
+                                    >
+                                        <button
+                                            class="btn-counter btn-counter--catalog btn-counter--minus"
+                                        >
+                                            -
+                                        </button>
+                                        <span class="quantity quantity--catalog"
+                                            >1</span
+                                        >
+                                        <button
+                                            class="btn-counter btn-counter--catalog btn-counter--plus"
+                                        >
+                                            +
+                                        </button>
+                                    </div>
+                                </div>
+                                <button class="btn-send btn-send--catalog">
+                                    заказать
+                                </button>
+                            </div>
+                            <!-- /.catalog__item -->
+                            <div class="catalog__item swiper-slide">
+                                <picture class="catalog__item-img">
+                                    <img
+                                        src="./images/catalog/catalog-2.png"
+                                        alt="Бутыль 6 литров"
+                                    />
+                                </picture>
+                                <h3 class="catalog__item-title">6 литров</h3>
+                                <div class="catalog__price-block">
+                                    <span class="catalog__item-price">50₽</span>
+                                    <div class="counter-block">
+                                        <button
+                                            class="btn-counter btn-counter--minus"
+                                        >
+                                            -
+                                        </button>
+                                        <span class="quantity">1</span>
+                                        <button
+                                            class="btn-counter btn-counter--plus"
+                                        >
+                                            +
+                                        </button>
+                                    </div>
+                                </div>
+                                <button class="btn-send btn-send--catalog">
+                                    заказать
+                                </button>
+                            </div>
+                            <!-- /.catalog__item -->
+
+                            <div class="catalog__item swiper-slide">
+                                <picture class="catalog__item-img">
+                                    <img
+                                        src="./images/catalog/catalog-3.png"
+                                        alt="Бутыль 1,5 литра"
+                                    />
+                                </picture>
+                                <h3 class="catalog__item-title">1,5 литров</h3>
+                                <div class="catalog__price-block">
+                                    <span class="catalog__item-price">35₽</span>
+                                    <div class="counter-block">
+                                        <button
+                                            class="btn-counter btn-counter--minus"
+                                        >
+                                            -
+                                        </button>
+                                        <span class="quantity">1</span>
+                                        <button
+                                            class="btn-counter btn-counter--plus"
+                                        >
+                                            +
+                                        </button>
+                                    </div>
+                                </div>
+                                <button class="btn-send btn-send--catalog">
+                                    заказать
+                                </button>
+                            </div>
+                            <!-- /.catalog__item -->
+
+                            <div class="catalog__item swiper-slide">
+                                <picture class="catalog__item-img">
+                                    <img
+                                        src="./images/catalog/catalog-4.png"
+                                        alt="Бутыль 19 литров"
+                                    />
+                                </picture>
+                                <h3 class="catalog__item-title">0,5 литра</h3>
+                                <div class="catalog__price-block">
+                                    <span class="catalog__item-price">20₽</span>
+                                    <div class="counter-block">
+                                        <button
+                                            class="btn-counter btn-counter--minus"
+                                        >
+                                            -
+                                        </button>
+                                        <span class="quantity">1</span>
+                                        <button
+                                            class="btn-counter btn-counter--plus"
+                                        >
+                                            +
+                                        </button>
+                                    </div>
+                                </div>
+                                <button class="btn-send btn-send--catalog">
+                                    заказать
+                                </button>
+                            </div>
+                            <!-- /.catalog__item -->
+                        </div>
+                    </div>
+                </div>
                 </div>
             </section>
             <!-- /.catalog -->
