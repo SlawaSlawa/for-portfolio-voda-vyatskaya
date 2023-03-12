@@ -587,21 +587,37 @@
             <!-- /.production -->
         </main>
         <!-- .main -->
-        <footer class="footer dn">
+        <footer class="footer">
             <div class="container">
+                <picture class="logo logo--footer">
+                    <source
+                        srcset="./images/logo.png"
+                        media="(min-width: 768px)"
+                    />
+                    <source
+                        srcset="./images/logo-min.png"
+                        media="(min-width: 576px)"
+                    />
+                    <source
+                        srcset="./images/logo-min-mobile.png"
+                        media="(min-width: 280px)"
+                    />
+                    <!-- <source
+                        srcset="./images/logo-min.png"
+                        media="(max-width: 768px)"
+                    />
+                    <source
+                        srcset="./images/logo-min-mobile.png"
+                        media="(max-width: 576px)"
+                    /> -->
+                    <img
+                        class="logo__img"
+                        src="./images/logo.png"
+                        alt="Логотип"
+                    />
+                </picture>
                 <div class="footer__wrapper">
                     <div class="footer__contacts">
-                        <picture class="logo">
-                            <source
-                                srcset="./images/logo-min.png"
-                                media="(max-width: 768px)"
-                            />
-                            <img
-                                class="logo__img"
-                                src="./images/logo.png"
-                                alt="Логотип"
-                            />
-                        </picture>
                         <ul class="footer__contacts-list">
                             <li class="footer__contacts-item">
                                 <a
@@ -631,17 +647,45 @@
                                     +7 (953) 696-83-66
                                 </a>
                             </li>
-                            <li class="footer__contacts-item"></li>
+                            <li class="footer__contacts-item">
+                                <a
+                                    href="tel:+79536968366"
+                                    class="footer__contacts-link"
+                                >
+                                    <picture class="footer__contacts-img">
+                                        <img
+                                            src="./images/location-icon.svg"
+                                            alt="GPS"
+                                        />
+                                    </picture>
+                                    <div class="footer__adress-wrap">
+                                        <div class="footer__adress-city">
+                                            г. Вятские Поляны
+                                        </div>
+                                        <div class="footer__adree-city">
+                                            ул. Чехова дом 34
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
                         </ul>
                         <div class="footer__copy">Вода Вятская (с) 2022</div>
                     </div>
-                    <nav class="nav">
-                        <a class="nav__link" href="#">производство</a>
-                        <a class="nav__link" href="#">вода</a>
-                        <a class="nav__link" href="#">напитки</a>
-                        <a class="nav__link" href="#">доставка</a>
-                        <a class="nav__link" href="#">контакты</a>
-                        <a href="#" class="nav__link navlink--footer"
+                    <nav class="nav nav--footer">
+                        <a class="nav__link nav__link--footer" href="#"
+                            >производство</a
+                        >
+                        <a class="nav__link nav__link--footer" href="#">вода</a>
+                        <a class="nav__link nav__link--footer" href="#"
+                            >напитки</a
+                        >
+                        <a class="nav__link nav__link--footer" href="#"
+                            >доставка</a
+                        >
+                        <a class="nav__link nav__link--footer" href="#"
+                            >контакты</a
+                        >
+                        <a href="#" class="nav__link nav__link--policy"
                             >Политика конфеденциальности</a
                         >
                     </nav>
@@ -653,10 +697,12 @@
                                     class="footer__socials-link"
                                     target="_blank"
                                 >
-                                    youtube.com
+                                    <span class="footer__socials-link-text">
+                                        youtube.com
+                                    </span>
                                     <picture class="footer__socials-img">
                                         <img
-                                            src="./images/youtube-icon.svg"
+                                            src="./images/youtube-icon-min.svg"
                                             alt="Youtube"
                                         />
                                     </picture>
@@ -668,8 +714,14 @@
                                     class="footer__socials-link"
                                     target="_blank"
                                 >
-                                    vk.com/vodakzn
+                                    <span class="footer__socials-link-text">
+                                        vk.com/vodakzn
+                                    </span>
                                     <picture class="footer__socials-img">
+                                        <source
+                                            srcset="./images/vk-icon-min.svg"
+                                            sizes="(max-width: 734px)"
+                                        />
                                         <img
                                             src="./images/vk-icon.svg"
                                             alt="VK"
@@ -683,8 +735,16 @@
                                     class="footer__socials-link"
                                     target="_blank"
                                 >
-                                    @vodakzn
+                                    <span class="footer__socials-link-text">
+                                        @vodakzn
+                                    </span>
                                     <picture class="footer__socials-img">
+                                        <source
+                                            srcset="
+                                                ./images/instagram-icon-min.svg
+                                            "
+                                            sizes="(max-width: 734px)"
+                                        />
                                         <img
                                             src="./images/instagram-icon.svg"
                                             alt="Instagram"
@@ -698,8 +758,14 @@
                                     class="footer__socials-link"
                                     target="_blank"
                                 >
-                                    voda@gmail.com
+                                    <span class="footer__socials-link-text">
+                                        voda@gmail.com
+                                    </span>
                                     <picture class="footer__socials-img">
+                                        <source
+                                            srcset="./images/mail-icon-min.svg"
+                                            sizes="(max-width: 734px)"
+                                        />
                                         <img
                                             src="./images/mail-icon.svg"
                                             alt="Mail"
@@ -709,6 +775,12 @@
                             </li>
                         </ul>
                     </div>
+                </div>
+                <div class="footer__copy copy-min">
+                    <a href="#" class="nav__link--policy-min"
+                        >Политика конфеденциальности</a
+                    >
+                    Вода Вятская 2022
                 </div>
             </div>
         </footer>
