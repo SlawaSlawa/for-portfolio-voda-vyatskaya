@@ -33,22 +33,15 @@
         <link rel="stylesheet" href="libs/swiper/swiper-bundle.min.css" />
         <link rel="stylesheet" href="css/index.min.css" />
         <script src="libs/swiper/swiper-bundle.min.js" defer></script>
-        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.0/js/swiper.js"></script>
-        <link
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
-        /> -->
-
-        <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script> -->
         <script src="js/index.min.js" defer></script>
     </head>
     <body>
         <header class="header">
-            <btn class="burger-btn">
+            <div class="burger-btn">
                 <div class="burger-line"></div>
                 <div class="burger-line"></div>
                 <div class="burger-line burger-line--min"></div>
-            </btn>
+            </div>
             <div class="container">
                 <div class="header__wrapper">
                     <picture class="logo">
@@ -387,10 +380,10 @@
             <!-- /.calculate -->
             <section class="catalog">
                 <div class="catalog__bg"></div>
-                    <div class="container">
-                        <h2 class="section-title">Основной каталог</h2>
-                    </div>
-                    <div class="container container--catalog">
+                <div class="container">
+                    <h2 class="section-title">Основной каталог</h2>
+                </div>
+                <div class="container container--catalog">
                     <div class="swiper catalog__navigation-slider">
                         <nav class="swiper-wrapper catalog__navigation">
                             <button
@@ -544,10 +537,9 @@
                         </div>
                     </div>
                 </div>
-                </div>
             </section>
             <!-- /.catalog -->
-            <section class="description dn">
+            <section class="description">
                 <div class="container">
                     <h2 class="section-title">
                         Вода вятская —
@@ -555,13 +547,13 @@
                             >ПИТЬЕВАЯ ВОДА ДЛЯ ДОМА И ОФИСА</span
                         >
                     </h2>
-                    <p class="description">
+                    <p class="description__text">
                         Выбрать компанию, предлагающую действительно хороший
                         товар, не так-то просто. Высокая цена далеко не всегда
                         означает отменное качество, порой предлагается простая
                         вода из-под крана, о чём можно узнать из этикетки.
                     </p>
-                    <p class="description">
+                    <p class="description__text description__text--more">
                         Наша компания предлагает действительно качественный
                         товар и гарантирует своевременную доставку питьевой воды
                         до дома или офиса. У нас вы можете также купить кулер
@@ -571,6 +563,8 @@
                         Такие приспособления незаменимы в офисе, а теперь
                         используются и в квартирах.
                     </p>
+
+                    <button class="btn btn--send">Подробнее</button>
                 </div>
             </section>
             <!-- /.description -->
