@@ -137,3 +137,21 @@ const headerToggleBg = () => {
 }
 
 headerToggleBg()
+handleBurger = () => {
+    const burgerBtn = document.querySelector('.burger-btn')
+    const headerNav = document.querySelector('#headerNav')
+
+    const openOrCloseBurger = () => {
+        if (burgerBtn.classList.contains('burger-btn--active')) {
+            burgerBtn.classList.remove('burger-btn--active')
+            headerNav.classList.remove('nav--active')
+        } else {
+            burgerBtn.classList.add('burger-btn--active')
+            headerNav.classList.add('nav--active')
+        }
+    }
+
+    burgerBtn.addEventListener('click', openOrCloseBurger)
+}
+
+handleBurger()

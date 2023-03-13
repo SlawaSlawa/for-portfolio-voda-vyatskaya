@@ -119,6 +119,10 @@
 
    max-width: 683px;
 
+   -webkit-transition: right .3s ease;
+        -o-transition: right .3s ease;
+           transition: right .3s ease;
+
    gap: 35px;
 }
 
@@ -132,6 +136,7 @@
 
 .burger-btn {
    position: absolute;
+   z-index: 20;
    top: 35px;
    right: 35px;
 
@@ -148,6 +153,48 @@
    background-color: #50beff;
    -webkit-box-shadow: inset 2.36842px 2.36842px 5.52632px rgba(136, 165, 191, .48);
            box-shadow: inset 2.36842px 2.36842px 5.52632px rgba(136, 165, 191, .48);
+}
+
+.burger-btn--active {
+   -webkit-box-shadow: none;
+           box-shadow: none;
+}
+
+.burger-btn--active .burger-line--top,
+.burger-btn--active .burger-line--mid {
+   -webkit-transition: -webkit-transform .3s ease;
+        -o-transition:         transform .3s ease;
+           transition: -webkit-transform .3s ease;
+           transition:         transform .3s ease;
+           transition:         transform .3s ease, -webkit-transform .3s ease;
+}
+
+.burger-btn--active .burger-line--top {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+
+   width: 60%;
+
+   -webkit-transform: translate(-50%, -50%) rotate(45deg);
+       -ms-transform: translate(-50%, -50%) rotate(45deg);
+           transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.burger-btn--active .burger-line--mid {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+
+   width: 60%;
+
+   -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+       -ms-transform: translate(-50%, -50%) rotate(-45deg);
+           transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.burger-btn--active .burger-line--min {
+   display: none;
 }
 
 .burger-line {
@@ -1486,6 +1533,12 @@ button {
       gap: 20px;
    }
 
+   .nav--active {
+      right: 0;
+
+      padding-top: 80px;
+   }
+
    .nav__link {
       color: #fff;
    }
@@ -1860,6 +1913,10 @@ button {
 }
 
 @media (max-width: 576px) {
+   .nav--active {
+      max-width: 100%;
+   }
+
    .hero {
       background-size: 100% auto;
    }
