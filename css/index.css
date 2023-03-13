@@ -1016,7 +1016,7 @@
    gap: 20px;
 }
 
-.nav__link {
+.nav__link--footer {
    font-size: 18px;
    font-weight: 600;
    font-style: normal;
@@ -1026,8 +1026,15 @@
 }
 
 .nav__link--policy {
+   font-size: 18px;
+   font-weight: 600;
+   font-style: normal;
+   line-height: 22px;
+
    position: absolute;
    bottom: 0;
+
+   color: #fefefe;
 }
 
 .footer__socials-link {

@@ -33,6 +33,11 @@
         <link rel="stylesheet" href="libs/swiper/swiper-bundle.min.css" />
         <link rel="stylesheet" href="css/index.min.css" />
         <script src="libs/swiper/swiper-bundle.min.js" defer></script>
+        <script
+            src="libs/scrollToSection/seamless-scroll-polyfill-min.js"
+            defer
+        ></script>
+        <script src="libs/scrollToSection/scrollToSection.js" defer></script>
         <script src="js/index.min.js" defer></script>
     </head>
     <body>
@@ -56,11 +61,11 @@
                         />
                     </picture>
                     <nav class="nav">
-                        <a class="nav__link" href="#">производство</a>
-                        <a class="nav__link" href="#">вода</a>
-                        <a class="nav__link" href="#">напитки</a>
-                        <a class="nav__link" href="#">доставка</a>
-                        <a class="nav__link" href="#">контакты</a>
+                        <a class="nav__link" href="#production">производство</a>
+                        <a class="nav__link" href="#calculate">вода</a>
+                        <a class="nav__link" href="#catalog">напитки</a>
+                        <a class="nav__link" href="#reason">доставка</a>
+                        <a class="nav__link" href="#footer">контакты</a>
                     </nav>
                 </div>
             </div>
@@ -143,7 +148,7 @@
                 <!-- /.contacts -->
             </section>
             <!-- /.hero -->
-            <section class="reason">
+            <section class="reason" id="reason">
                 <div class="container">
                     <h2 class="section-title">
                         <span class="section-title__selection">
@@ -218,7 +223,7 @@
                 </div>
             </section>
             <!-- /.reason -->
-            <section class="calculate">
+            <section class="calculate" id="calculate">
                 <div class="calculate__bg"></div>
                 <div class="calculator">
                     <h2 class="calculator__title">Калькулятор воды</h2>
@@ -378,7 +383,7 @@
                 <!-- /.calculator -->
             </section>
             <!-- /.calculate -->
-            <section class="catalog">
+            <section class="catalog" id="catalog">
                 <div class="catalog__bg"></div>
                 <div class="container">
                     <h2 class="section-title">Основной каталог</h2>
@@ -570,7 +575,7 @@
                 </div>
             </section>
             <!-- /.description -->
-            <section class="production">
+            <section class="production" id="production">
                 <div class="container">
                     <h2 class="section-title">Наше производство</h2>
                     <div class="production__video">
@@ -587,7 +592,7 @@
             <!-- /.production -->
         </main>
         <!-- .main -->
-        <footer class="footer">
+        <footer class="footer" id="footer">
             <div class="container">
                 <picture class="logo logo--footer">
                     <source
@@ -602,14 +607,6 @@
                         srcset="./images/logo-min-mobile.png"
                         media="(min-width: 280px)"
                     />
-                    <!-- <source
-                        srcset="./images/logo-min.png"
-                        media="(max-width: 768px)"
-                    />
-                    <source
-                        srcset="./images/logo-min-mobile.png"
-                        media="(max-width: 576px)"
-                    /> -->
                     <img
                         class="logo__img"
                         src="./images/logo.png"
@@ -672,20 +669,24 @@
                         <div class="footer__copy">Вода Вятская (с) 2022</div>
                     </div>
                     <nav class="nav nav--footer">
-                        <a class="nav__link nav__link--footer" href="#"
+                        <a
+                            class="nav__link nav__link--footer"
+                            href="#production"
                             >производство</a
                         >
-                        <a class="nav__link nav__link--footer" href="#">вода</a>
-                        <a class="nav__link nav__link--footer" href="#"
+                        <a class="nav__link nav__link--footer" href="#calculate"
+                            >вода</a
+                        >
+                        <a class="nav__link nav__link--footer" href="#catalog"
                             >напитки</a
                         >
-                        <a class="nav__link nav__link--footer" href="#"
+                        <a class="nav__link nav__link--footer" href="#reason"
                             >доставка</a
                         >
                         <a class="nav__link nav__link--footer" href="#"
                             >контакты</a
                         >
-                        <a href="#" class="nav__link nav__link--policy"
+                        <a href="#footer" class="nav__link nav__link--policy"
                             >Политика конфеденциальности</a
                         >
                     </nav>
