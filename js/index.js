@@ -113,3 +113,27 @@ const catalogNavigationSlider = new Swiper('.catalog__navigation-slider', {
         },
         },
 });
+const headerToggleBg = () => {
+    const headerEl = document.querySelector('.header')
+    const pageHeight = document.documentElement.scrollHeight
+
+    const toggleOrShowBg = () => {
+        if (document.documentElement.clientWidth > 768 &&
+            window.pageYOffset > pageHeight * 1 / 7
+            ) {
+                headerEl.style.backgroundColor = '#ffffff'
+        } else {
+            headerEl.style.backgroundColor = ''
+        }
+
+        if (window.pageYOffset > pageHeight * 3 / 4) {
+            headerEl.style.display = 'none'
+        } else {
+            headerEl.style.display = ''
+        }
+    }
+
+    window.addEventListener('scroll', toggleOrShowBg)
+}
+
+headerToggleBg()
