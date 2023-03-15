@@ -41,7 +41,7 @@
         <script src="js/index.min.js" defer></script>
     </head>
     <body>
-        <header class="header">
+        <header class="header fix-block">
             <div class="burger-btn burger-btn--active">
                 <div class="burger-line burger-line--top"></div>
                 <div class="burger-line burger-line--mid"></div>
@@ -72,7 +72,8 @@
         </header>
         <!-- /.header -->
         <main class="main">
-            <section class="hero">
+            <div class="overlay"></div>
+            <section class="hero" id="hero">
                 <div class="hero__top-bg"></div>
                 <div class="container">
                     <div class="hero__wrapper">
@@ -132,6 +133,7 @@
                                 class="hero__input"
                                 type="tel"
                                 placeholder="ваш телефон"
+                                required
                             />
                             <button class="btn-send btn-send--hero">
                                 заказать
@@ -235,10 +237,10 @@
                             <div class="calculator__question-wrapper">
                                 <label
                                     for="office"
-                                    class="calculator__question-label"
+                                    class="calculator__question-label calculator__question-where"
                                     >в офис
                                     <input
-                                        class="calculator__item-radio"
+                                        class="calculator__item-radio calculator__item-radio-where"
                                         id="office"
                                         name="where"
                                         type="radio"
@@ -247,10 +249,10 @@
                                 </label>
                                 <label
                                     for="home"
-                                    class="calculator__question-label calculator__question-label--active"
+                                    class="calculator__question-label calculator__question-label--active calculator__question-where"
                                     >домой
                                     <input
-                                        class="calculator__item-radio"
+                                        class="calculator__item-radio calculator__item-radio-where"
                                         id="home"
                                         name="where"
                                         type="radio"
@@ -264,7 +266,7 @@
                         <div class="calculator__item calculator__item--in-row">
                             <h3 class="calculator__question">будут пить</h3>
                             <div class="calculator__counter-info">
-                                <div class="counter-block">
+                                <div class="counter-block" id="counterHumans">
                                     <button
                                         class="btn-counter btn-counter--minus"
                                     >
@@ -288,7 +290,7 @@
                                 НАМ НУЖЕН ЗАПАС НА
                             </h3>
                             <div class="calculator__counter-info">
-                                <div class="counter-block">
+                                <div class="counter-block" id="counterDays">
                                     <button
                                         class="btn-counter btn-counter--minus"
                                     >
@@ -313,10 +315,10 @@
                             <div class="calculator__question-wrapper">
                                 <label
                                     for="withCooking"
-                                    class="calculator__question-label"
+                                    class="calculator__question-label calculator__question-cooking"
                                     >с готовкой
                                     <input
-                                        class="calculator__item-radio"
+                                        class="calculator__item-radio calculator__item-radio-cooking"
                                         id="withCooking"
                                         name="cooking"
                                         type="radio"
@@ -325,10 +327,10 @@
                                 </label>
                                 <label
                                     for="notCooking"
-                                    class="calculator__question-label calculator__question-label--active"
+                                    class="calculator__question-label calculator__question-label--active calculator__question-cooking"
                                     >без готовки
                                     <input
-                                        class="calculator__item-radio"
+                                        class="calculator__item-radio calculator__item-radio-cooking"
                                         id="notCooking"
                                         name="cooking"
                                         type="radio"
@@ -375,9 +377,12 @@
                                 </div>
                             </div>
                         </div>
-                        <button class="btn-send btn-send--calculate">
+                        <a
+                            class="btn-send btn-send--calculate btn-send-calculate"
+                            href="#hero"
+                        >
                             заказать
-                        </button>
+                        </a>
                     </div>
                 </div>
                 <!-- /.calculator -->
@@ -575,7 +580,7 @@
                 </div>
             </section>
             <!-- /.description -->
-            <section class="production" id="production">
+            <!-- <section class="production" id="production">
                 <div class="container">
                     <h2 class="section-title">Наше производство</h2>
                     <div class="production__video">
@@ -588,7 +593,7 @@
                         ></iframe>
                     </div>
                 </div>
-            </section>
+            </section> -->
             <!-- /.production -->
         </main>
         <!-- .main -->

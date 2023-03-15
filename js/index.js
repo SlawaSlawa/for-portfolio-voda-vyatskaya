@@ -1,3 +1,29 @@
+const disableScroll = () => {
+    const fixBlocks = document.querySelectorAll('.fix-block')
+    const paddingOffset = window.innerWidth - document.body.offsetWidth + 'px'
+    
+    document.body.style.overflow = 'hidden'
+    document.body.style.paddingRight = paddingOffset
+
+    if (fixBlocks.length) {
+        fixBlocks.forEach(block => {
+            block.style.paddingRight = paddingOffset
+        })
+    }
+}
+
+const enableScroll = () => {
+    const fixBlocks = document.querySelectorAll('.fix-block')
+
+    document.body.style.overflow = ''
+    document.body.style.paddingRight = ''
+
+    if (fixBlocks.length) {
+        fixBlocks.forEach(block => {
+            block.style.paddingRight = ''
+        })
+    }
+}
 const swiperReason = new Swiper('.reason__slider', {
     slidesPerView: 3,
     spaceBetween: 133,
@@ -155,3 +181,169 @@ handleBurger = () => {
 }
 
 handleBurger()
+const overlayEl = document.querySelector('.overlay')
+
+const sendData = async (data) => {
+    const URL = 'https://jsonplaceholder.typicode.com/posts'
+
+    const preloaderEl = document.createElement('div')
+    preloaderEl.classList.add('loader')
+    overlayEl.append(preloaderEl)
+
+    disableScroll()
+    overlayEl.style.display = 'block'
+
+    await fetch(URL, {
+        method: 'POST',
+        body: JSON.stringify({
+            title: data.name || 'Not name',
+            phone: data.phone,
+            userId: Date.now(),
+        }),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+        },
+        })
+
+    overlayEl.textContent = ''
+    overlayEl.style.display = ''
+    enableScroll()
+
+    renderInfoWindow()
+}
+const handleMinForm = () => {
+    const form = document.querySelector('.hero__form')
+
+    form.addEventListener('submit', async (evt) => {
+        evt.preventDefault()
+        const phone = form.querySelector('.hero__input').value
+        const data = {phone: phone}
+        await sendData(data);
+        form.reset()
+    })
+}
+
+handleMinForm()
+const renderInfoWindow = () => {
+    disableScroll()
+    overlayEl.style.display = 'block'
+
+    const infoEl = document.createElement('div')
+    infoEl.classList.add('info-msg')
+    const infoText = document.createElement('h2')
+    infoText.textContent = 'Ваша заявка принята! Скоро с Вами свяжется наш оперетор!'
+    infoEl.append(infoText)
+    overlayEl.append(infoEl)
+
+    setTimeout(() => {
+        overlayEl.textContent = ''
+        overlayEl.style.display = ''
+        enableScroll()
+    }, 2000)
+}
+const calculator = () => {
+    const whereLabels = document.querySelectorAll('.calculator__question-where')
+    const radiosWhere = document.querySelectorAll('.calculator__item-radio-where')
+    const cookingLabels = document.querySelectorAll('.calculator__question-cooking')
+    const radiosCooking = document.querySelectorAll('.calculator__item-radio-cooking')
+    const counterHumans = document.getElementById('counterHumans')
+    const counterDays = document.getElementById('counterDays')
+    const calculatorInfoCount = document.querySelector('.calculator__info-count')
+    const calculatorInfoPrice = document.querySelector('.calculator__info-price')
+
+    const PRICE = 30
+    const NORM_FOR_A_PERSON = 3
+    const NORM_FOR_COOCING = 3
+
+    const data = {where: '', question: '', humans: 1, days: 1}
+
+    const renderInfo = () => {
+        let litres = 0
+        let price = 0
+
+        if (data.question === 'with cooking') {
+            litres = (NORM_FOR_A_PERSON + NORM_FOR_COOCING) * data.humans * data.days
+        } else {
+            console.log(NORM_FOR_A_PERSON, data.humans, data.days);
+            litres = NORM_FOR_A_PERSON * data.humans * data.days
+        }
+
+        price = litres * PRICE
+
+        calculatorInfoCount.textContent = litres
+        calculatorInfoPrice.textContent = price
+    }
+
+    radiosWhere.forEach(radioBtn => {
+        radioBtn.addEventListener('click', (evt) => {
+            evt.stopPropagation()
+        })
+    })
+
+    whereLabels.forEach(label => {
+        label.addEventListener('click', () => {
+            whereLabels.forEach(item => {
+                item.classList.remove('calculator__question-label--active')
+            })
+
+            if (!label.classList.contains('calculator__question-label--active')) {
+                label.classList.add('calculator__question-label--active')
+                data.where = label.querySelector('input').value
+            }
+        })
+        renderInfo()
+    })
+
+    radiosCooking.forEach(radioBtn => {
+        radioBtn.addEventListener('click', (evt) => {
+            evt.stopPropagation()
+        })
+    })
+
+    cookingLabels.forEach(label => {
+        label.addEventListener('click', () => {
+            cookingLabels.forEach(item => {
+                item.classList.remove('calculator__question-label--active')
+            })
+
+            if (!label.classList.contains('calculator__question-label--active')) {
+                label.classList.add('calculator__question-label--active')
+                data.question = label.querySelector('input').value
+            }
+
+            renderInfo()
+        })
+    })
+
+    counterHumans.querySelector('.btn-counter--minus').addEventListener('click', () => {
+        if (data.humans > 1) {
+            data.humans--
+        }
+        counterHumans.querySelector('.counter__number').textContent = data.humans
+        renderInfo()
+    })
+
+    counterHumans.querySelector('.btn-counter--plus').addEventListener('click', () => {
+        data.humans++
+        counterHumans.querySelector('.counter__number').textContent = data.humans
+        renderInfo()
+    })
+
+    counterDays.querySelector('.btn-counter--minus').addEventListener('click', () => {
+        if (data.days > 1) {
+            data.days--
+        }
+        counterDays.querySelector('.counter__number').textContent = data.days
+        renderInfo()
+    })
+
+    counterDays.querySelector('.btn-counter--plus').addEventListener('click', () => {
+        data.days++
+        counterDays.querySelector('.counter__number').textContent = data.days
+        renderInfo()
+    })
+
+    renderInfo()
+}
+
+calculator()

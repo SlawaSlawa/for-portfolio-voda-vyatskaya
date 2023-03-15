@@ -33,3 +33,9 @@ scrollToSections({
 	inline: 'center'
 }, '.nav__link')
 
+scrollToSections({
+	behavior: 'smooth',
+	block: 'start',
+	inline: 'center'
+}, '.btn-send-calculate')
+
