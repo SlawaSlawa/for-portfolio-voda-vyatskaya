@@ -1,3 +1,150 @@
+let catalogData = []
+const catalogSwiperSlider = () => {
+    const swiperCatalog = new Swiper('.catalog-slider', {
+        slidesPerView: 4,
+        spaceBetween: 29,
+        initialSlide: 0,
+        centeredSlides: false,
+        
+        breakpoints: {
+            280: {
+                spaceBetween: 18,
+                slidesPerView: 1.3,
+                centeredSlides: true,
+                initialSlide: 1,
+            },
+            300: {
+                spaceBetween: 18,
+                slidesPerView: 1.4,
+                centeredSlides: true,
+                initialSlide: 1,
+            },
+            320: {
+                spaceBetween: 18,
+                slidesPerView: 1.5,
+                centeredSlides: true,
+                initialSlide: 1,
+            },
+            390: {
+                spaceBetween: 22,
+                slidesPerView: 1.7,
+                centeredSlides: true,
+                initialSlide: 1,
+            },
+            600: {
+                spaceBetween: 22,
+                slidesPerView: 2.3,
+                centeredSlides: true,
+                initialSlide: 1,
+            },
+            800: {
+                spaceBetween: 22,
+                slidesPerView: 3.3,
+                centeredSlides: true,
+                initialSlide: 1,
+            },
+            976: {
+                    spaceBetween: 29,
+                    slidesPerView: 4,
+                    centeredSlides: false,
+                    initialSlide: 0,
+                }
+            },
+            on: {
+                resize(evt) {
+                    if (this.width < 976) {
+                        this.activeIndex = 1
+                    }
+                }
+            }
+    });
+}
+const getCatalog = async () => {
+    const URL = 'https://voda-vyatskaya-7a164-default-rtdb.firebaseio.com/.json'
+    catalogData = []
+
+    await fetch(URL)
+        .then(response => response.json())
+        .then(json => {
+            catalogData = json.map(item => item)
+        })
+}
+const renderCatalog = (type) => {
+    const catalogSlider = document.querySelector('.catalog-slider')
+    catalogSlider.textContent = ''
+    
+    const filteredCatalog = catalogData.filter(item => item.type === type)
+
+    if (filteredCatalog.length) {
+        const catalogWrapper = document.createElement('div')
+        catalogWrapper.classList.add('swiper-wrapper', 'catalog__wrapper')
+        catalogSlider.append(catalogWrapper)
+
+        filteredCatalog.forEach(item => {
+            const {img, price, title} = item
+
+            const slide = `
+                    <div class="catalog__item swiper-slide">
+                        <picture class="catalog__item-img">
+                            <img
+                                src="${img}"
+                                alt="${title}"
+                            />
+                        </picture>
+                        <h3 class="catalog__item-title">${title}</h3>
+                        <div class="catalog__price-block">
+                            <span class="catalog__item-price"
+                                >${price}₽</span
+                            >
+                            <div
+                                class="counter-block counter-block--catalog"
+                            >
+                                <button
+                                    class="btn-counter btn-counter--catalog btn-counter--minus"
+                                >
+                                    -
+                                </button>
+                                <span class="quantity quantity--catalog"
+                                    >1</span
+                                >
+                                <button
+                                    class="btn-counter btn-counter--catalog btn-counter--plus"
+                                >
+                                    +
+                                </button>
+                            </div>
+                        </div>
+                        <a class="btn-send btn-send--catalog" href="#hero">
+                            заказать
+                        </a>
+                    </div>
+        `
+        catalogWrapper.insertAdjacentHTML('beforeend', slide)
+        })
+
+        catalogSwiperSlider()
+    } else {
+        catalogSlider.innerHTML = '<h2 class="error-title">По вашему запросу ничего не найдено</h2>'
+    }
+}
+const catalogTabs = () => {
+    const catalogNavigationItems = document.querySelectorAll('.catalog__navigation-item')
+
+    catalogNavigationItems.forEach(tab => {
+        tab.addEventListener('click', (evt) => {
+            const target = evt.target
+            
+            catalogNavigationItems.forEach(item => {
+                item.classList.remove('catalog__navigation-item--active')
+            })
+
+            target.classList.add('catalog__navigation-item--active')
+            renderCatalog(target.dataset.type)
+        })
+    })
+}
+
+catalogTabs()
 const disableScroll = () => {
     const fixBlocks = document.querySelectorAll('.fix-block')
     const paddingOffset = window.innerWidth - document.body.offsetWidth + 'px'
@@ -53,64 +200,6 @@ const swiperReason = new Swiper('.reason__slider', {
         }
     }
 
-});
-const swiperCatalog = new Swiper('.catalog-slider', {
-    slidesPerView: 4,
-    spaceBetween: 29,
-    initialSlide: 0,
-    centeredSlides: false,
-    
-    breakpoints: {
-        280: {
-            spaceBetween: 18,
-            slidesPerView: 1.3,
-            centeredSlides: true,
-            initialSlide: 1,
-        },
-        300: {
-            spaceBetween: 18,
-            slidesPerView: 1.4,
-            centeredSlides: true,
-            initialSlide: 1,
-        },
-        320: {
-            spaceBetween: 18,
-            slidesPerView: 1.5,
-            centeredSlides: true,
-            initialSlide: 1,
-        },
-        390: {
-            spaceBetween: 22,
-            slidesPerView: 1.7,
-            centeredSlides: true,
-            initialSlide: 1,
-        },
-        600: {
-            spaceBetween: 22,
-            slidesPerView: 2.3,
-            centeredSlides: true,
-            initialSlide: 1,
-        },
-        800: {
-            spaceBetween: 22,
-            slidesPerView: 3.3,
-            centeredSlides: true,
-            initialSlide: 1,
-        },
-        976: {
-                spaceBetween: 29,
-                slidesPerView: 4,
-                centeredSlides: false,
-                initialSlide: 0,
-            }
-        },
-        on: {
-            resize(evt) {
-                if (this.width < 976) {
-                    this.activeIndex = 1
-                }
-            }
-        }
 });
 const catalogNavigationSlider = new Swiper('.catalog__navigation-slider', {
     slidesPerView: 4,
@@ -264,7 +353,6 @@ const calculator = () => {
         if (data.question === 'with cooking') {
             litres = (NORM_FOR_A_PERSON + NORM_FOR_COOCING) * data.humans * data.days
         } else {
-            console.log(NORM_FOR_A_PERSON, data.humans, data.days);
             litres = NORM_FOR_A_PERSON * data.humans * data.days
         }
 
@@ -347,3 +435,14 @@ const calculator = () => {
 }
 
 calculator()
+const init = async() => {
+    await getCatalog()
+    renderCatalog('water')
+    scrollToSections({
+        behavior: 'smooth',
+        block: 'start',
+        inline: 'center'
+    }, '.btn-send')
+}
+
+init()

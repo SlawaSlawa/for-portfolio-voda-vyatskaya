@@ -42,7 +42,7 @@
     </head>
     <body>
         <header class="header fix-block">
-            <div class="burger-btn burger-btn--active">
+            <div class="burger-btn">
                 <div class="burger-line burger-line--top"></div>
                 <div class="burger-line burger-line--mid"></div>
                 <div class="burger-line burger-line--min"></div>
@@ -60,7 +60,7 @@
                             alt="Логотип"
                         />
                     </picture>
-                    <nav class="nav nav--active" id="headerNav">
+                    <nav class="nav" id="headerNav">
                         <a class="nav__link" href="#production">производство</a>
                         <a class="nav__link" href="#calculate">вода</a>
                         <a class="nav__link" href="#catalog">напитки</a>
@@ -397,22 +397,26 @@
                     <div class="swiper catalog__navigation-slider">
                         <nav class="swiper-wrapper catalog__navigation">
                             <button
-                                class="swiper-slide catalog__navigation-item"
+                                class="swiper-slide catalog__navigation-item catalog__navigation-item--active"
+                                data-type="water"
                             >
                                 ВОДА
                             </button>
                             <button
-                                class="swiper-slide catalog__navigation-item catalog__navigation-item--active"
+                                class="swiper-slide catalog__navigation-item"
+                                data-type="beverages"
                             >
                                 НАПИТКИ
                             </button>
                             <button
                                 class="swiper-slide catalog__navigation-item"
+                                data-type="pumps"
                             >
                                 ПОМПЫ
                             </button>
                             <button
                                 class="swiper-slide catalog__navigation-item"
+                                data-type="extra"
                             >
                                 ДОПОЛНИТЕЛЬНО
                             </button>
@@ -450,9 +454,9 @@
                                         </button>
                                     </div>
                                 </div>
-                                <button class="btn-send btn-send--catalog">
+                                <a class="btn-send btn-send--catalog">
                                     заказать
-                                </button>
+                                </a>
                             </div>
                             <!-- /.catalog__item -->
                             <div class="catalog__item swiper-slide">
@@ -479,9 +483,9 @@
                                         </button>
                                     </div>
                                 </div>
-                                <button class="btn-send btn-send--catalog">
+                                <a class="btn-send btn-send--catalog">
                                     заказать
-                                </button>
+                                </a>
                             </div>
                             <!-- /.catalog__item -->
 
@@ -509,9 +513,9 @@
                                         </button>
                                     </div>
                                 </div>
-                                <button class="btn-send btn-send--catalog">
+                                <a class="btn-send btn-send--catalog">
                                     заказать
-                                </button>
+                                </a>
                             </div>
                             <!-- /.catalog__item -->
 
@@ -539,9 +543,9 @@
                                         </button>
                                     </div>
                                 </div>
-                                <button class="btn-send btn-send--catalog">
+                                <a class="btn-send btn-send--catalog">
                                     заказать
-                                </button>
+                                </a>
                             </div>
                             <!-- /.catalog__item -->
                         </div>
