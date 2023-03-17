@@ -850,6 +850,9 @@
    -webkit-box-align: center;
    -ms-flex-align: center;
    align-items: center;
+   -webkit-box-pack: justify;
+   -ms-flex-pack: justify;
+   justify-content: space-between;
    gap: 30px;
 }
 
@@ -1235,6 +1238,26 @@ button {
 .btn-send--catalog {
    width: 100%;
    margin-left: 0;
+}
+
+.disabled-btn {
+   cursor: default;
+
+   background-color: #e55e5e;
+}
+
+.disabled-btn:hover {
+   -webkit-box-shadow: none;
+           box-shadow: none;
+}
+
+.hero__input-error {
+   border: 2px solid #ec1f3a;
+}
+
+.hero__input-error:focus {
+   border: 2px solid #ec1f3a;
+   outline: none;
 }
 
 .section-title {

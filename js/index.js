@@ -1,4 +1,23 @@
 let catalogData = []
+const validationForm = () => {
+    const regexp = /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{6,10}$/
+    const sendBtn = document.querySelector('.btn-send')
+    const form = document.querySelector('.hero__form')
+    sendBtn.disabled = true
+    sendBtn.classList.add('disabled-btn')
+
+    form.addEventListener('input', () => {
+        if (regexp.test(form.phone.value)) {
+            sendBtn.classList.remove('disabled-btn')
+            sendBtn.disabled = false
+            form.phone.classList.remove('hero__input-error')
+        } else {
+            sendBtn.classList.add('disabled-btn')
+            sendBtn.disabled = true
+            form.phone.classList.add('hero__input-error')
+        }
+    })
+}
 const catalogSwiperSlider = () => {
     const swiperCatalog = new Swiper('.catalog-slider', {
         slidesPerView: 4,
@@ -93,7 +112,7 @@ const renderCatalog = (type) => {
                         </picture>
                         <h3 class="catalog__item-title">${title}</h3>
                         <div class="catalog__price-block">
-                            <span class="catalog__item-price"
+                            <span class="catalog__item-price" data-price="${price}"
                                 >${price}₽</span
                             >
                             <div
@@ -114,7 +133,7 @@ const renderCatalog = (type) => {
                                 </button>
                             </div>
                         </div>
-                        <a class="btn-send btn-send--catalog" href="#hero">
+                        <a class="btn-send btn-send--catalog btn-to-scroll" href="#hero">
                             заказать
                         </a>
                     </div>
@@ -123,6 +142,11 @@ const renderCatalog = (type) => {
         })
 
         catalogSwiperSlider()
+        scrollToSections({
+            behavior: 'smooth',
+            block: 'start',
+            inline: 'center'
+        }, '.btn-to-scroll')
     } else {
         catalogSlider.innerHTML = '<h2 class="error-title">По вашему запросу ничего не найдено</h2>'
     }
@@ -145,6 +169,41 @@ const catalogTabs = () => {
 }
 
 catalogTabs()
+const catalogItemsPrice = () => {
+    const catalogEl = document.querySelector('.catalog-slider')
+
+    catalogEl.addEventListener('click', (evt) => {
+        const target = evt.target
+
+        if (target.classList.contains('btn-counter--plus')) {
+            const counterBlock = target.closest('.counter-block')
+            const quantityEl = counterBlock.querySelector('.quantity')
+            const priceEl = target.closest('.catalog__price-block').querySelector('.catalog__item-price')
+
+            let price = +priceEl.dataset.price
+            let count = +quantityEl.textContent
+
+            count++
+            quantityEl.textContent = count
+            priceEl.textContent = price * count +'₽'
+        }
+
+        if (target.classList.contains('btn-counter--minus')) {
+            const counterBlock = target.closest('.counter-block')
+            const quantityEl = counterBlock.querySelector('.quantity')
+            const priceEl = target.closest('.catalog__price-block').querySelector('.catalog__item-price')
+
+            let price = +priceEl.dataset.price
+            let count = +quantityEl.textContent
+
+            if (count > 1) {
+                count--
+                quantityEl.textContent = count
+                priceEl.textContent = price * count +'₽'
+            }
+        }
+    })
+}
 const disableScroll = () => {
     const fixBlocks = document.querySelectorAll('.fix-block')
     const paddingOffset = window.innerWidth - document.body.offsetWidth + 'px'
@@ -436,13 +495,15 @@ const calculator = () => {
 
 calculator()
 const init = async() => {
+    validationForm()
     await getCatalog()
     renderCatalog('water')
     scrollToSections({
         behavior: 'smooth',
         block: 'start',
         inline: 'center'
-    }, '.btn-send')
+    }, '.btn-to-scroll')
+    catalogItemsPrice()
 }
 
 init()
